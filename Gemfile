@@ -7,7 +7,7 @@ ruby '2.6.5'
 
 gem 'bcrypt', '~> 3.1', '>= 3.1.11'
 gem 'bootsnap', '>= 1.4.2', require: false
-gem 'bootstrap-sass', '~> 3.3.6'
+gem 'bootstrap-sass', '~> 3.4.1'
 gem 'jbuilder', '~> 2.7'
 gem 'pg'
 gem 'puma', '~> 4.1'
