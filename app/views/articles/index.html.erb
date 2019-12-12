@@ -1,0 +1,4 @@
+<%= render 'shared/flash_messages', flash: flash %>
+<h3 align="center">Listing all the records</h3>
+<h6 align="center"> <%= link_to 'New Article', new_article_path  %> || <%= link_to 'Logout', session_path(current_user), confirm: 'Are you sure?', method: :delete %></h6>
+<%= render 'article', obj: @article %>
