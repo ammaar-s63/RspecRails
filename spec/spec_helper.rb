@@ -16,10 +16,7 @@
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 
-
 RSpec.configure do |config|
-
-
   config.after :all do
     ActiveRecord::Base.subclasses.each(&:delete_all)
   end

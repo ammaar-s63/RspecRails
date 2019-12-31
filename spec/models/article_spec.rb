@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe Article, type: :model do
@@ -9,9 +11,9 @@ RSpec.describe Article, type: :model do
     expect(@article1).to be_valid
   end
 
-  it 'has a unique title' do
-    article2 = build(:article, title: 'first article')
-    expect(article2).to_not be_valid
+  it 'validates title uniqueness' do
+    article2 = build(:article, title: @article1.title)
+    expect { article2.save! }.to raise_error(ActiveRecord::RecordInvalid)
   end
 
   it 'has a unique email' do
@@ -33,5 +35,4 @@ RSpec.describe Article, type: :model do
     article6 = build(:article, title: 'this title is have more than thirty characters')
     expect(article6).to_not be_valid
   end
-
 end
